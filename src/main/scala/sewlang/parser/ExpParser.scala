@@ -81,7 +81,7 @@ object ExpParser {
   
   private def isKeyWord(str: String) = {
     val KeyWords = Seq("while","var","set","if")
-	if KeyWords.contains(str){
+	if (KeyWords.contains(str)){
 		println("Identificador não pode usar palavra chave, reveja o nome do identificador!")
 	}else{
 		isIdentifier(str)
