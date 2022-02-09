@@ -1,0 +1,22 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(test, Some(f7eb365f-cc60-4e4e-80c5-2f09c461d8f5), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Test / test[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 13 Scala sources to /home/ubuntu/Leonardo/Programação/Scala/Interpretador/target/scala-2.12/classes ...[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sewlang/interpreter/ExpInterpreter.scala:33:55: not enough arguments for method evalArithExp: (op: (Double, Double) => Double, val1: sewlang.interpreter.Value, val2: sewlang.interpreter.Value)sewlang.interpreter.Value.[0m
+[0m[[0m[31merror[0m] [0m[0mUnspecified value parameter val2.[0m
+[0m[[0m[31merror[0m] [0m[0m    case NegExp(exp)                   => evalArithExp(_ - _, eval(exp)(env))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sewlang/interpreter/ExpInterpreter.scala:45:63: not found: value evBoolVal[0m
+[0m[[0m[31merror[0m] [0m[0m    case OrExp(exp1, exp2)             => evalBoolExp(_ || _, evBoolVal(exp1)(env), eval(exp2)(env))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sewlang/interpreter/ExpInterpreter.scala:58:10: not found: value ReadStringExp[0m
+[0m[[0m[31merror[0m] [0m[0m    case ReadStringExp                 => StringV(readLine())[0m
+[0m[[0m[31merror[0m] [0m[0m         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sewlang/interpreter/ExpInterpreter.scala:64:44: not found: type Line[0m
+[0m[[0m[31merror[0m] [0m[0m  private[interpreter] var readLine: () => Line = io.StdIn.readLine // for testing purposes[0m
+[0m[[0m[31merror[0m] [0m[0m                                           ^[0m
+[0m[[0m[31merror[0m] [0m[0mfour errors found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 12 s, completed 9 de fev. de 2022 18:18:17[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0mForcing garbage collection...[0m

@@ -1,0 +1,88 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(run examples/hello.sew, Some(9ce1b452-e839-4dc8-92da-64b117df38bd), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 13 Scala sources to /home/ubuntu/Leonardo/Programação/Scala/Interpretador/target/scala-2.12/classes ...[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sewlang/interpreter/ExpInterpreter.scala:33:55: not enough arguments for method evalArithExp: (op: (Double, Double) => Double, val1: sewlang.interpreter.Value, val2: sewlang.interpreter.Value)sewlang.interpreter.Value.[0m
+[0m[[0m[31merror[0m] [0m[0mUnspecified value parameter val2.[0m
+[0m[[0m[31merror[0m] [0m[0m    case NegExp(exp)                   => evalArithExp(_ - _, eval(exp)(env))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sewlang/interpreter/ExpInterpreter.scala:45:63: not found: value evBoolVal[0m
+[0m[[0m[31merror[0m] [0m[0m    case OrExp(exp1, exp2)             => evalBoolExp(_ || _, evBoolVal(exp1)(env), eval(exp2)(env))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sewlang/interpreter/ExpInterpreter.scala:58:10: not found: value ReadStringExp[0m
+[0m[[0m[31merror[0m] [0m[0m    case ReadStringExp                 => StringV(readLine())[0m
+[0m[[0m[31merror[0m] [0m[0m         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sewlang/interpreter/ExpInterpreter.scala:64:44: not found: type Line[0m
+[0m[[0m[31merror[0m] [0m[0m  private[interpreter] var readLine: () => Line = io.StdIn.readLine // for testing purposes[0m
+[0m[[0m[31merror[0m] [0m[0m                                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sexpr/parser/SExprParser.scala:3:19: object parsing is not a member of package util[0m
+[0m[[0m[31merror[0m] [0m[0mimport scala.util.parsing.combinator.RegexParsers[0m
+[0m[[0m[31merror[0m] [0m[0m                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sexpr/parser/SExprParser.scala:8:28: not found: type RegexParsers[0m
+[0m[[0m[31merror[0m] [0m[0mobject SExprParser extends RegexParsers {[0m
+[0m[[0m[31merror[0m] [0m[0m                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sexpr/parser/SExprParser.scala:10:15: not found: type Parser[0m
+[0m[[0m[31merror[0m] [0m[0m  def number: Parser[SNum] = ("""[-+]?[0-9]*\.?[0-9]+""".r) ^^ { (num: String) => SNum(num.toDouble) }[0m
+[0m[[0m[31merror[0m] [0m[0m              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sexpr/parser/SExprParser.scala:10:61: value ^^ is not a member of scala.util.matching.Regex[0m
+[0m[[0m[31merror[0m] [0m[0m  def number: Parser[SNum] = ("""[-+]?[0-9]*\.?[0-9]+""".r) ^^ { (num: String) => SNum(num.toDouble) }[0m
+[0m[[0m[31merror[0m] [0m[0m                                                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sexpr/parser/SExprParser.scala:12:15: not found: type Parser[0m
+[0m[[0m[31merror[0m] [0m[0m  def string: Parser[SString] = ("""\"[^\"]*\"""".r) ^^ { (str: String) => SString(str.substring(1, str.size - 1)) }[0m
+[0m[[0m[31merror[0m] [0m[0m              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sexpr/parser/SExprParser.scala:12:54: value ^^ is not a member of scala.util.matching.Regex[0m
+[0m[[0m[31merror[0m] [0m[0m  def string: Parser[SString] = ("""\"[^\"]*\"""".r) ^^ { (str: String) => SString(str.substring(1, str.size - 1)) }[0m
+[0m[[0m[31merror[0m] [0m[0m                                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sexpr/parser/SExprParser.scala:14:15: not found: type Parser[0m
+[0m[[0m[31merror[0m] [0m[0m  def symbol: Parser[SSym] = ("""[\w\-+*=<>/]+""".r) ^^ { (str: String) => SSym(str) }[0m
+[0m[[0m[31merror[0m] [0m[0m              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sexpr/parser/SExprParser.scala:14:54: value ^^ is not a member of scala.util.matching.Regex[0m
+[0m[[0m[31merror[0m] [0m[0m  def symbol: Parser[SSym] = ("""[\w\-+*=<>/]+""".r) ^^ { (str: String) => SSym(str) }[0m
+[0m[[0m[31merror[0m] [0m[0m                                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sexpr/parser/SExprParser.scala:16:13: not found: type Parser[0m
+[0m[[0m[31merror[0m] [0m[0m  def list: Parser[SList] = "(" ~> rep(sexpr) <~ ")" ^^ { exp => SList(exp) }[0m
+[0m[[0m[31merror[0m] [0m[0m            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sexpr/parser/SExprParser.scala:18:14: not found: type Parser[0m
+[0m[[0m[31merror[0m] [0m[0m  def sexpr: Parser[SExpr] = number | string | symbol | list[0m
+[0m[[0m[31merror[0m] [0m[0m             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sexpr/parser/SExprParser.scala:16:33: value ~> is not a member of String[0m
+[0m[[0m[31merror[0m] [0m[0m  def list: Parser[SList] = "(" ~> rep(sexpr) <~ ")" ^^ { exp => SList(exp) }[0m
+[0m[[0m[31merror[0m] [0m[0m                                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sexpr/parser/SExprParser.scala:16:36: not found: value rep[0m
+[0m[[0m[31merror[0m] [0m[0m  def list: Parser[SList] = "(" ~> rep(sexpr) <~ ")" ^^ { exp => SList(exp) }[0m
+[0m[[0m[31merror[0m] [0m[0m                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sexpr/parser/SExprParser.scala:20:18: not found: type Parser[0m
+[0m[[0m[31merror[0m] [0m[0m  def sexprList: Parser[List[SExpr]] = rep(sexpr) ^^ { exp => exp }[0m
+[0m[[0m[31merror[0m] [0m[0m                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sexpr/parser/SExprParser.scala:20:40: not found: value rep[0m
+[0m[[0m[31merror[0m] [0m[0m  def sexprList: Parser[List[SExpr]] = rep(sexpr) ^^ { exp => exp }[0m
+[0m[[0m[31merror[0m] [0m[0m                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sexpr/parser/SExprParser.scala:22:43: value parseAll is not a member of AnyRef[0m
+[0m[[0m[31merror[0m] [0m[0m  def parse(input: String): SExpr = super.parseAll(sexpr, input) match {[0m
+[0m[[0m[31merror[0m] [0m[0m                                          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sexpr/parser/SExprParser.scala:23:10: not found: value Success[0m
+[0m[[0m[31merror[0m] [0m[0m    case Success(sexpr, _) => sexpr[0m
+[0m[[0m[31merror[0m] [0m[0m         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sexpr/parser/SExprParser.scala:24:10: not found: value Failure[0m
+[0m[[0m[31merror[0m] [0m[0m    case Failure(msg, _)   => throw SExprParserException(msg)[0m
+[0m[[0m[31merror[0m] [0m[0m         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sexpr/parser/SExprParser.scala:25:10: class Error is not a case class, nor does it have an unapply/unapplySeq member[0m
+[0m[[0m[31merror[0m] [0m[0m    case Error(msg, _)     => throw SExprParserException(msg)[0m
+[0m[[0m[31merror[0m] [0m[0m         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sexpr/parser/SExprParser.scala:28:53: value parseAll is not a member of AnyRef[0m
+[0m[[0m[31merror[0m] [0m[0m  def parseList(input: String): List[SExpr] = super.parseAll(sexprList, input) match {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sexpr/parser/SExprParser.scala:29:10: not found: value Success[0m
+[0m[[0m[31merror[0m] [0m[0m    case Success(sexpr, _) => sexpr[0m
+[0m[[0m[31merror[0m] [0m[0m         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sexpr/parser/SExprParser.scala:30:10: not found: value Failure[0m
+[0m[[0m[31merror[0m] [0m[0m    case Failure(msg, _)   => throw SExprParserException(msg)[0m
+[0m[[0m[31merror[0m] [0m[0m         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ubuntu/Leonardo/Programação/Scala/Interpretador/src/main/scala/sexpr/parser/SExprParser.scala:31:10: class Error is not a case class, nor does it have an unapply/unapplySeq member[0m
+[0m[[0m[31merror[0m] [0m[0m    case Error(msg, _)     => throw SExprParserException(msg)[0m
+[0m[[0m[31merror[0m] [0m[0m         ^[0m
+[0m[[0m[31merror[0m] [0m[0m26 errors found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 9 s, completed 9 de fev. de 2022 17:57:17[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0mForcing garbage collection...[0m

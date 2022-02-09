@@ -1,0 +1,8 @@
+1644356944418:run
+1644430808409:run examples/hello.sew
+1644441484740:test
+1644443084177:run example/hello.sew
+1644443299614:clear
+1644443341314:run
+1644443959451:run example/hello.sew
+1644443987531:run examples/hello.sew

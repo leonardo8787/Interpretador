@@ -30,7 +30,7 @@ object ExpInterpreter {
     // #10 Implemente a avaliação das expressões (- exp1 exp2), (/ exp1 exp2) e (- exp)
     case SubExp(exp1, exp2)            => evalArithExp(_ - _, eval(exp1)(env), eval(exp2)(env))
     case DivExp(exp1, exp2)            => evalArithExp(_ / _, eval(exp1)(env), eval(exp2)(env))
-    case NegExp(exp)                   => evalArithExp(_ - _, eval(exp)(env))
+    case NegExp(exp)                   => evalArithExp(_ - _, eval(exp)(env), eval(exp)(env))
 
     case EqualExp(exp1, exp2)          => evalRelationalExp(_ == _, eval(exp1)(env), eval(exp2)(env))
     case LessThanExp(exp1, exp2)       => evalRelationalExp(_ < _, eval(exp1)(env), eval(exp2)(env))
@@ -42,7 +42,8 @@ object ExpInterpreter {
     case NotExp(exp)                   => evalNotExp(eval(exp)(env))
     case AndExp(exp1, exp2)            => evalBoolExp(_ && _, eval(exp1)(env), eval(exp2)(env))
     // #12 Implemente a avaliação da expressão (or exp1 exp2)
-    case OrExp(exp1, exp2)             => evalBoolExp(_ || _, evBoolVal(exp1)(env), eval(exp2)(env))
+    //case OrExp(exp1, exp2)             => evalBoolExp(_ || _, evBoolVal(exp1)(env), eval(exp2)(env))
+    case OrExp(exp1, exp2)             => evalBoolExp(_ || _, eval(exp1)(env), eval(exp2)(env))
 
     case IfExp(cond, thenExp, elseExp) => evalIfExp(eval(cond)(env), thenExp, elseExp)(env)
 
@@ -55,13 +56,15 @@ object ExpInterpreter {
     case ReadNumExp                    => NumberV(readDouble())
     // #13 Implemente a avaliação das expressões (read-bool) e (read-str)
     case ReadBoolExp                   => BoolV(readBoolean())
-    case ReadStringExp                 => StringV(readLine())
+    //case ReadStringExp                 => StringV(readLine())
+    //case ReadStrExp                    => StringV(readString())
+    case ReadStrExp                    => StringV(readLine())
   }
 
   private[interpreter] var print: (Any) => Unit = println // for testing purposes
   private[interpreter] var readDouble: () => Double = io.StdIn.readDouble // for testing purposes
   private[interpreter] var readBoolean: () => Boolean = io.StdIn.readBoolean // for testing purposes
-  private[interpreter] var readLine: () => Line = io.StdIn.readLine // for testing purposes
+  //private[interpreter] var readLine: () => Line = io.StdIn.readLine // for testing purposes
 
   private def evalVarDecl(id: Exp, exp: Exp)(env: Environment): Value = id match {
     case IdExp(id) => env.declare(id, eval(exp)(env))
