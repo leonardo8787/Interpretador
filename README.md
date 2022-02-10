@@ -27,11 +27,9 @@ sbt
 Em seguida digite RUN;
   
 ~~~
-run (nome do exemplo).sew
+run
 ~~~
 
 <h2>Funcionamento</h2>
 
-É necessário a instalação de alguma IDE para acompanhamento do código, e também a instalação do SBT(Scala Build Tool), uma ferramenta de build que vamos utilizar para gerenciar as dependências do projeto e automatizar os processos de compilação, execução e teste do nosso projeto.
-
-<h2>Conclusões</h2>
+É necessário a instalação de alguma IDE para acompanhamento do código, e também a instalação do SBT(Scala Build Tool), uma ferramenta de build que vamos utilizar para gerenciar as dependências do projeto e automatizar os processos de compilação, execução e teste do nosso projeto. Também é aconselhável verificar a versão do SBT e do JDK.
